@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Neofetch GUI
+Comment=A graphical interface for Neofetch
+Exec=neofetch-gui
+Icon=org.tiwut.NeofetchGui
+Terminal=false
+Type=Application
+Categories=Utility;System;

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.tiwut.NeofetchGui</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Neofetch GUI</name>
+  <summary>System information tool with a modern dark UI</summary>
+  <description>
+    <p>A fast and lightweight GTK4 wrapper for Neofetch, providing system information in a dark, aggressive design.</p>
+  </description>
+  <launchable type="desktop-id">org.tiwut.NeofetchGui.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The main window showing system information.</caption>
+      <image>https://raw.githubusercontent.com/DEIN_USERNAME/org.tiwut.NeofetchGui/main/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://tiwut.org</url>
+</component>
