@@ -34,8 +34,9 @@ modules:
   - name: neofetch-gui
     buildsystem: meson
     sources:
-      - type: dir
-        path: .
+      - type: git
+        url: https://github.com/tiwut/Neofetch-Gui.git
+        branch: main
 finish-args:
   - --socket=x11
   - --socket=wayland
