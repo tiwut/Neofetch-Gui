@@ -1,0 +1,77 @@
+// This is a generated file; do not edit!
+
+static inline /* C++23 constexpr */ bool
+unistr_is_local_graphic(char32_t c) noexcept
+{
+#if VTE_DEBUG && (VERSION_MINOR % 2) == 1 && !defined(MINIFONT_TEST)
+  // Cover the whole blocks in debug mode on development versions
+  switch (c >> 8) { // block
+  case 0x23: /* U+23xx */
+  case 0x25: /* U+25xx */
+  case 0x1cc: /* U+1CCxx */
+  case 0x1cd: /* U+1CDxx */
+  case 0x1ce: /* U+1CExx */
+  case 0x1fb: /* U+1FBxx */
+    [[unlikely]] return true;
+  default: [[likely]] return false;
+  }
+
+#else // VTE_DEBUG
+
+  switch (c >> 6) {
+  case 0x94: /* 2500 */
+  case 0x95: /* 2540 */
+  case 0x734: /* 1CD00 */
+  case 0x735: /* 1CD40 */
+  case 0x736: /* 1CD80 */
+  case 0x7ec: /* 1FB00 */
+  case 0x7ed: /* 1FB40 */
+      [[unlikely]] return true;
+  case 0x8e: /* 2380 */ [[unlikely]] {
+    static constexpr uint64_t bits_2380 = UINT64_C(0b0011111100000000000000000000000000000000000000000000000000000000);
+    return bits_2380 & (UINT64_C(1) << (c & 0x3f));
+  }
+  case 0x96: /* 2580 */ [[unlikely]] {
+    static constexpr uint64_t bits_2580 = UINT64_C(0b0000000000000000000000000000000011111111111111111111111111111111);
+    return bits_2580 & (UINT64_C(1) << (c & 0x3f));
+  }
+  case 0x97: /* 25C0 */ [[unlikely]] {
+    static constexpr uint64_t bits_25C0 = UINT64_C(0b0000000000000000000000000011110000000000000000000000000000000000);
+    return bits_25C0 & (UINT64_C(1) << (c & 0x3f));
+  }
+  case 0x730: /* 1CC00 */ [[unlikely]] {
+    static constexpr uint64_t bits_1CC00 = UINT64_C(0b1111111111111111111111111111111111111000000000000000000000000000);
+    return bits_1CC00 & (UINT64_C(1) << (c & 0x3f));
+  }
+  case 0x731: /* 1CC40 */ [[unlikely]] {
+    static constexpr uint64_t bits_1CC40 = UINT64_C(0b0000000000000000000000000000000000000000000000000000000011111111);
+    return bits_1CC40 & (UINT64_C(1) << (c & 0x3f));
+  }
+  case 0x737: /* 1CDC0 */ [[unlikely]] {
+    static constexpr uint64_t bits_1CDC0 = UINT64_C(0b0000000000000000000000000011111111111111111111111111111111111111);
+    return bits_1CDC0 & (UINT64_C(1) << (c & 0x3f));
+  }
+  case 0x738: /* 1CE00 */ [[unlikely]] {
+    static constexpr uint64_t bits_1CE00 = UINT64_C(0b0000000000000000000000000000000000000011110000000000011000000000);
+    return bits_1CE00 & (UINT64_C(1) << (c & 0x3f));
+  }
+  case 0x739: /* 1CE40 */ [[unlikely]] {
+    static constexpr uint64_t bits_1CE40 = UINT64_C(0b1111111111111111111111111111111111111111111111100000000000000000);
+    return bits_1CE40 & (UINT64_C(1) << (c & 0x3f));
+  }
+  case 0x73a: /* 1CE80 */ [[unlikely]] {
+    static constexpr uint64_t bits_1CE80 = UINT64_C(0b0000000000000000111111111111111111111111111111111111111111111111);
+    return bits_1CE80 & (UINT64_C(1) << (c & 0x3f));
+  }
+  case 0x7ee: /* 1FB80 */ [[unlikely]] {
+    static constexpr uint64_t bits_1FB80 = UINT64_C(0b1110000000000000111111111111111111111111111111111111111111111111);
+    return bits_1FB80 & (UINT64_C(1) << (c & 0x3f));
+  }
+  case 0x7ef: /* 1FBC0 */ [[unlikely]] {
+    static constexpr uint64_t bits_1FBC0 = UINT64_C(0b0000000000000000000000001111000011111111111111111100000000000000);
+    return bits_1FBC0 & (UINT64_C(1) << (c & 0x3f));
+  }
+  default: [[likely]] return false;
+  }
+#endif // VTE_DEBUG
+}

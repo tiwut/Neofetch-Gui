@@ -1,0 +1,69 @@
+{
+  "id" : "org.tiwut.NeofetchGui",
+  "runtime" : "org.gnome.Platform",
+  "runtime-version" : "47",
+  "runtime-commit" : "7d00756d7d5f6397c54f09ac69521991cff9e40a31e6eca6bf61ae9864149380",
+  "sdk" : "org.gnome.Sdk",
+  "sdk-commit" : "fb298c9ea35750b1037f755885076d16ffeed5462b4cee83705b6007474b0307",
+  "command" : "neofetch-gui",
+  "modules" : [
+    {
+      "name" : "gperf",
+      "buildsystem" : "autotools",
+      "sources" : [
+        {
+          "url" : "https://ftp.gnu.org/pub/gnu/gperf/gperf-3.1.tar.gz",
+          "sha256" : "588546b945bba4b70b6a3a616e80b4ab466e3f33024a352fc2198112cdbb3ae2",
+          "type" : "archive"
+        }
+      ]
+    },
+    {
+      "name" : "vte",
+      "buildsystem" : "meson",
+      "config-opts" : [
+        "-Ddocs=false",
+        "-Dgir=false",
+        "-Dvapi=false"
+      ],
+      "sources" : [
+        {
+          "url" : "https://gitlab.gnome.org/GNOME/vte.git",
+          "commit" : "4673aa2f1b90b69ccc870000e33cd7dce564f9a1",
+          "type" : "git"
+        }
+      ]
+    },
+    {
+      "name" : "neofetch",
+      "buildsystem" : "simple",
+      "sources" : [
+        {
+          "url" : "https://github.com/dylanaraps/neofetch",
+          "commit" : "60d07dee6b76769d8c487a40639fb7b5a1a7bc85",
+          "type" : "git"
+        }
+      ],
+      "build-commands" : [
+        "make install PREFIX=/app"
+      ]
+    },
+    {
+      "name" : "neofetch-gui",
+      "buildsystem" : "meson",
+      "sources" : [
+        {
+          "path" : ".",
+          "type" : "dir"
+        }
+      ]
+    }
+  ],
+  "finish-args" : [
+    "--socket=x11",
+    "--socket=wayland",
+    "--device=dri",
+    "--filesystem=host"
+  ],
+  "source-date-epoch" : 1776422603
+}

@@ -1,0 +1,5 @@
+[Runtime]
+name=org.tiwut.NeofetchGui.Locale
+
+[ExtensionOf]
+ref=app/org.tiwut.NeofetchGui/x86_64/master

@@ -8,11 +8,8 @@ executable('neofetch-gui',
            dependencies: [gtk_dep, vte_dep],
            install: true)
 
-install_data('org.tiwut.NeofetchGui.desktop', 
-             install_dir: join_paths(get_option('datadir'), 'applications'))
+install_data('org.tiwut.NeofetchGui.desktop', install_dir: join_paths(get_option('datadir'), 'applications'))
 
-install_data('org.tiwut.NeofetchGui.metainfo.xml', 
-             install_dir: join_paths(get_option('datadir'), 'metainfo'))
+install_data('org.tiwut.NeofetchGui.metainfo.xml', install_dir: join_paths(get_option('datadir'), 'metainfo'))
 
-install_data('org.tiwut.NeofetchGui.png', 
-            install_dir: join_paths(get_option('datadir'), 'icons/hicolor/128x128/apps'))
+install_data('org.tiwut.NeofetchGui.svg', install_dir: join_paths(get_option('datadir'), 'icons/hicolor/scalable/apps'))
