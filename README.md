@@ -2,6 +2,8 @@
 
 A modern, dark-themed GTK4 wrapper for Neofetch with terminal emulation.
 
+![Neofetch GUI Screenshot](screenshot.png)
+
 ## Installation
 
 This application is distributed as a Flatpak bundle. 
